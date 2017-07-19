@@ -33,6 +33,10 @@ ul li {
     padding-left: 10px;
 }
 
+.done{
+    background-color: #0c0;
+}
+
 .glyphicon{
     margin: 0 5px;
     cursor: pointer;
