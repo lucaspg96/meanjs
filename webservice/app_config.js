@@ -4,7 +4,7 @@ var app = module.exports =  express();
 
 var bodyParser = require('body-parser');
 
-var porta = 8000;
+var porta = 5000;
 
 app.listen(porta);
 console.log("Rodando servidor na porta "+porta+" as "+new Date())

@@ -22,8 +22,6 @@ app.get('/tasks', function(req,res){
 
 app.post('/tasks', function(req,res){
 
-  console.log(req.body)
-
   db.task({
     text : req.body.text,
     done : req.body.done
@@ -32,7 +30,7 @@ app.post('/tasks', function(req,res){
         res.send({err:error})
       }
       else{
-        res.send({})
+        res.send(task)
       }
     })
 
@@ -40,7 +38,6 @@ app.post('/tasks', function(req,res){
 
 app.put('/tasks',function(req,res){
   var id = req.body.id
-
   db.task.update({'_id':id},{done:true},function(error,task){
     if(error){
       res.send({err:error})
@@ -53,8 +50,9 @@ app.put('/tasks',function(req,res){
 })
 
 app.delete('/tasks',function(req,res){
-  var id = req.body.id
-
+  var id = req.query.id
+	console.log(req.body,req.params,req.query);
+	console.log("Deleting "+id)
   db.task.remove({"_id":id},function(error){
     if(error){
       res.send({err:error})
