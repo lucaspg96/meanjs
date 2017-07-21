@@ -2,26 +2,26 @@
 <html>
     <head>
         <meta charset="utf-8">
-        
-        <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/style.css">
-        
-        <script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"></script>
-        <script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
-        
+
+        <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+
         <script type="text/javascript" src="js/app.js"></script>
         <script type="text/javascript" src="js/controller.js"></script>
-        
+
         <title>To Do!</title>
     </head>
-    
+
     <body ng-app="todo" ng-controller="controller">
         <div class="container">
             <h1>Lista de procrastinações</h1>
 
             <ul>
                 <li ng-repeat="activity in todo" ng-class="{done: activity.done}"><span class="glyphicon glyphicon-ok" ng-click="done(activity)"></span><span class="glyphicon glyphicon-remove" ng-click="remove(activity,$index)"></span>{{activity.text}}</li>
-                
+
             </ul>
 
             <form ng-model="form" ng-submit="add()">
